@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'event/style.css' %}">
+    <title>Accueil</title>
+
+</head>
+<body>
+    {% block contenue %}
+    <h1 class="index_title">Zenith du Tiers monde</h1>
+    {% if event_list %}
+        <ul>
+            {% for event in event_list %}
+                <li>
+                    <div class="content-wrapper">
+                            <div class="news-card">
+                                <a href="{% url 'event:detail' event.id %}" class="news-card__card-link"></a>
+                                {% for group in event.group.all %}
+                                    {% if group.pics_group %}
+                                        <img class="news-card__image" src="{{ group.pics_group.url }}"><br>
+                                    {% endif %} 
+                                {% endfor %}
+                            <div class="news-card__text-wrapper">
+                                <h3 class="news-card__title">{{ event.name_event }}</h3><br>
+                                <div class="news-card__post-date">Du {{ event.begin_date }} au {{ event.end_date}}</div><br>
+                                <div class="news-card__details-wrapper">
+                                    <p class="news-card__excerpt">{{ event.description_event }}&hellip;</p>
+                                    <input type="submit" value="Réserver">
+                                    <input type="submit" value="Acheter">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}    
+        </ul>
+    {% else %}
+        <p>Pas d'évènements disponible</p>
+    {% endif %} 
+    {% endblock %}
+</body>
+</html>
+
