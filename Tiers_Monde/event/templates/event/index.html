@@ -5,14 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!--Wrapper -->
     <link rel="stylesheet" type="text/css" href="{% static 'event/style.css' %}">
     <title>Accueil</title>
 
 </head>
 <body>
     {% block contenue %}
-    <h1 class="index_title">Zenith du Tiers monde</h1>
+    <nav>
+        <h1 class="title">Zenith du Tiers monde</h1>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Connexion</a></li>
+            <li><a href="#">Inscription</a></li>
+            <li><a href="#">Déconnexion</a></li>
+            <li><a href="{% url 'event:informations' %}">Informations</a></li>
+        </ul>
+    </nav>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="slider-box">
+                    <img src="{% static 'event/images/2.jpg' %}">
+                </div>
+            </div> <!--fin du swiper-slide  -->   
+            <div class="swiper-slide">
+                <div class="slider-box">
+                    <img src="{% static 'event/images/3.jpg' %}">
+                </div>
+            </div> <!--fin du swiper-slide  -->   
+            <div class="swiper-slide">
+                <div class="slider-box">
+                    <img src="{% static 'event/images/4.jpg' %}">
+                </div>
+            </div> <!--fin du swiper-slide  -->   
+        </div> <!--fin du swiper wrapper -->  
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+    </div><!--fin du swiper contenaire -->   
+
     {% if event_list %}
+    <h2 class="title2">Programmation</h2>
         <ul>
             {% for event in event_list %}
                 <li>
@@ -29,8 +65,7 @@
                                 <div class="news-card__post-date">Du {{ event.begin_date }} au {{ event.end_date}}</div><br>
                                 <div class="news-card__details-wrapper">
                                     <p class="news-card__excerpt">{{ event.description_event }}&hellip;</p>
-                                    <input type="submit" value="Réserver">
-                                    <input type="submit" value="Acheter">
+                                    <input type="submit" value="Infos">
                                 </div>
                             </div>
                         </div>
@@ -42,6 +77,8 @@
         <p>Pas d'évènements disponible</p>
     {% endif %} 
     {% endblock %}
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'event/script.js' %}"></script>
 </body>
 </html>
 

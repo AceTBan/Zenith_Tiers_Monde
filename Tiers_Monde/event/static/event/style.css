@@ -2,7 +2,7 @@
     font-family: neon;
     src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
 } */
-
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
 @import url('http://fonts.cdnfonts.com/css/neon-led');
 
 *{
@@ -12,12 +12,15 @@
 }
 
 body {
-    background-image: url(./images/raphael-schaller-zbUvPw1wUIw-unsplash.jpg);
+    background-image: url(./images/francesco-ungaro-jqKS0ET-wGE-unsplash.jpg);
     background-position: center;
     background-size: cover;
+    /* background-color: black; */
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
-.index_title {
+/* ----------------------------TITRE-------------------------------------- */
+.title {
     /* font-family: 'neon'; */
     font-family: 'NEON LED Light', sans-serif;
     color: #FB4264;
@@ -28,6 +31,15 @@ body {
     text-align: center;
 }
 
+.title2{
+    text-align: center;
+    color: #fa7116;
+    font-family: 'NEON LED Light', sans-serif;
+    font-size: 45px;
+    padding: 20px;
+    margin-top: 10px;
+
+}
 @keyframes neon {
     0%,
     100% {
@@ -39,6 +51,62 @@ body {
         color: #806914;
     }
 }
+/* ----------------------------------NAVBAR-------------------------------- */
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    padding: 10px;
+    padding-left: 50px;
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    animation: neon 1s ease infinite;
+}
+
+/* ----------------------------------SLIDER-------------------------------- */
+
+.swiper{
+    width: 1200px;
+    height: 500px;
+}
+
+.swiper-slide{
+    display: flex;
+}
+
+.swiper .swiper-button-prev{
+    color: #eac08d;
+    font-weight: bolder;
+}
+
+.swiper .swiper-button-prev:hover{
+    color: #cd701c;
+}
+
+.swiper .swiper-button-next{
+    color: #eac08d;
+    font-weight: bolder;
+}
+
+.swiper .swiper-button-next:hover{
+    color: #cd701c;
+}
+
+/* ----------------------------------CARD ACCUEIL-------------------------------- */
 
 .content-wrapper {
     margin: 0 auto;
@@ -143,4 +211,83 @@ body {
 .news-card__excerpt {
     font-weight: 300;
     margin-bottom: 0.5rem;
+}
+
+/* -----------------------BOUTON------------------------- */
+
+input[type="submit"]{
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #fa7116;
+    height: 30px;
+    width: 100px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus{
+    box-shadow: 0 0 70px rgba(255, 138, 48, 0.8), 0 5px 20px rgba(255, 138, 48, 0.8), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+}
+
+/* -----------------------DETAIL PAGE------------------------- */
+
+.p_detail{
+    color: #fff;
+    /* width: 500px; */
+    text-align: center;
+}
+
+.img_group_detail{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+.img_artist_detail{
+    margin: 10px;
+}
+
+.container_img_detail{
+    display: flex;
+    justify-content: center;
+}
+
+.bouton_detail{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.bouton_detail1{
+    margin: 10px;
+}
+
+.a_detail{
+    display: flex;
+    justify-content: center;
+    color: #cd701c;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.info_detail{
+    text-align: center;
+    color: #fff;
+    width: 500px;
+    background-color: #cd6f1c25;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.info_detail_p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }

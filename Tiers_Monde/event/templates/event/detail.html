@@ -9,24 +9,35 @@
     <title>Détail</title>
 </head>
 <body>
-    <h1>{{ event.name_event }}</h1>
-    Date : Du <strong>{{ event.begin_date }}</strong> au <strong>{{ event.end_date}}</strong><br>
-    Type : {{ event.type }}<br>
-    Nombre de places : {{ event.av_ticket }} places<br>
-    {{ event.description_event }}<br>
+    <h1 class="title">{{ event.name_event }}</h1>
     {% for group in event.group.all %}
-        Groupe : {{ group.name_group }}<br>
-        Catégorie : {{ group.type_group }}<br>
         {% if group.pics_group %}
-            <img src="{{ group.pics_group.url }}"><br>
+            <img class="img_group_detail" src="{{ group.pics_group.url }}"><br>
         {% endif %} 
+        <h1 class="title2"> Artistes</h1>
+        <div class="container_img_detail">
         {% for artist in group.artist.all %}
-            Artiste : {{ artist.name_artist }}<br>
             {% if artist.pics_artist %}
-                <img src="{{ artist.pics_artist.url }}"><br>
+                <div class="div_img_artist_detail">
+                    <img class="img_artist_detail" src="{{ artist.pics_artist.url }}">
+                    <p class="p_detail">{{ artist.name_artist }}</p>
+                </div>
             {% endif %} 
         {% endfor %}
+        </div>
+    
+    <h1 class="title2">Informations</h1>
+    <p class="p_detail">Date : Du <strong>{{ event.begin_date }}</strong> au <strong>{{ event.end_date}}</strong></p>
+    <p class="p_detail">Type : {{ event.type }}</p>
+    <p class="p_detail">Nombre de places : {{ event.av_ticket }} places</p>
+    <p class="p_detail">{{ event.description_event }}</p>
+    <p class="p_detail">Groupe : {{ group.name_group }}</p>
+    <p class="p_detail">Catégorie : {{ group.type_group }}</p>
     {% endfor %}
-    <a href="{% url 'event:index' %}">Accueil</a>
+    <div class="bouton_detail">
+        <input class="bouton_detail1" type="submit" value="Acheter">
+        <input class="bouton_detail1" type="submit" value="Réserver">
+    </div>
+    <a class="a_detail" href="{% url 'event:index' %}">Accueil</a>
 </body>
 </html>

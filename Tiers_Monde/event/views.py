@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render, get_object_or_404
 from . models import Events
 
@@ -10,3 +11,6 @@ def index(request):
 def detail(request, event_id):
     event = get_object_or_404(Events, pk=event_id)
     return render(request, 'event/detail.html', {'event':event})
+
+def informations(request):
+    return render(request, 'event/informations.html')
