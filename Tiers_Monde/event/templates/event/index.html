@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8e8d5e63b3.js"></script>  <!--Icone --> 
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/> <!--Wrapper -->
     <link rel="stylesheet" type="text/css" href="{% static 'event/style.css' %}">
     <title>Accueil</title>
@@ -76,6 +77,48 @@
     {% else %}
         <p>Pas d'évènements disponible</p>
     {% endif %} 
+
+    <!-- Site footer -->
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3 class="title_footer">Zenith Du Tiers Monde</h3>
+            <p class="footer-links">
+                <a href="#" class="link-1">Home</a>              
+                <a href="#">Accueil</a>      
+                <a href="#">Informations</a>           
+                <a href="#">Connexion</a>               
+                <a href="#">Faq</a>            
+                <a href="#">Contact</a>
+            </p>
+            <p class="footer-company-name"> Adrar Formation TP© 2022</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>11 avenue de l'Europe</span> Ramonville, Toulouse</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>01 02 03 04 05</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:zenith_du_tiers_monde@gmail.com">zenith_du_tiers_monde@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>A propos</span>
+                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
     {% endblock %}
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="{% static 'event/script.js' %}"></script>
