@@ -2,5 +2,15 @@
 {% load static %}
 
 {% block contenue %}
-    <h1>ticket acheter</h1>
-    {% endblock %}
+<h1 class="title">Félicitation</h1>
+{% for group in event.group.all %}
+<h1 class="title2">Votre commande a bien été pris en compte par notre site de réservation.</h1>
+<p class="p_detail">Le <strong>{{ event.begin_date }}</strong> se tiendra le <strong>{{ event.type }} {{ event.name_event }} avec {{ group.name_group }}</strong>
+  <br>
+  - L'acheteur est responsable de l'utilisation du billet
+  <br>
+  - Seule la première personne se présentant avec le billet sera admise à l'évènement.
+</p>
+{% endfor %}
+<a class="a_detail" href="{% url 'event:index' %}">Accueil</a>
+{% endblock %}

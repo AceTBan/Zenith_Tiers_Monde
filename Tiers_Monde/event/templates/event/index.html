@@ -86,12 +86,11 @@
         <div class="footer-left">
             <h3 class="title_footer">Zenith Du Tiers Monde</h3>
             <p class="footer-links">
-                <a href="#" class="link-1">Home</a>              
-                <a href="#">Accueil</a>      
-                <a href="#">Informations</a>           
-                <a href="#">Connexion</a>               
+                <a href="{% url 'event:index' %}" class="link-1">Accueil</a>              
+                <a href="{% url 'event:informations' %}">Informations</a>           
+                <a href="{% url 'event:login' %}">Connexion</a>               
                 <a href="#">Faq</a>            
-                <a href="#">Contact</a>
+                <a href="{% url 'event:contact' %}">Contact</a>
             </p>
             <p class="footer-company-name"> Adrar Formation TP© 2022</p>
         </div>
@@ -115,10 +114,10 @@
                 Designed by Johan Valero #Mojo_jojo
             </p>
             <div class="footer-icons">
-                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="https://fr-fr.facebook.com/lesoubliesdutiersmonde/"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="https://github.com/johan-valero/Zenith_Tiers_Monde"><i class="fa fa-github"></i></a>
             </div>
         </div>
     </footer>
