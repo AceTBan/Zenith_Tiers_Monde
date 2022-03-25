@@ -2,8 +2,10 @@
 {% load static %}
 {% block contenue %}
 
-<h1>Bienvenue {{user.username}} !</h1>
-<p>Connexion réussi</p>
-<a href="{% url 'event:index' %}">Page d'accueil</a>
+<div class="welcome">
+    <h1 class="title">Bienvenue {{user.username}} !</h1>
+    <p class="p_detail">Connexion réussi</p>
+    <a class="a_detail" href="{% url 'event:index' %}">Page d'accueil</a>
+</div>
 
 {% endblock %}
