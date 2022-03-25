@@ -25,7 +25,7 @@ body {
     /* font-family: 'neon'; */
     font-family: 'NEON LED Light', sans-serif;
     color: #FB4264;
-    font-size: 80px;
+    font-size: 70px;
     line-height: 9vw;
     text-shadow: 0 0 3vw #F40A35;
     animation: neon 4s ease infinite;

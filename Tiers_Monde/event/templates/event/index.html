@@ -12,23 +12,24 @@
 
 </head>
 <body>
-    {% block contenue %}
     <nav>
         <h1 class="title">Zenith du Tiers monde</h1>
         <ul>
             <li><a href="{% url 'event:index' %}">Accueil</a></li>
-            <li><a href="#">Connexion</a></li>
-            <li><a href="#">Inscription</a></li>
-            <li><a href="#">Déconnexion</a></li>
+            <li><a href="{% url 'event:login' %}">Connexion</a></li>
+            <li><a href="{% url 'event:register' %}">Inscription</a></li>
+            <li><a href="{% url 'event:logout' %}">Déconnexion</a></li>
             <li><a href="{% url 'event:informations' %}">Informations</a></li>
         </ul>
     </nav>
+    {% block contenue %}
 
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="slider-box">
                     <img src="{% static 'event/images/2.jpg' %}">
+                    <h1 class="title2"></h1>
                 </div>
             </div> <!--fin du swiper-slide  -->   
             <div class="swiper-slide">
@@ -78,6 +79,7 @@
         <p>Pas d'évènements disponible</p>
     {% endif %} 
 
+    {% endblock %}
     <!-- Site footer -->
     <footer class="footer-distributed">
         <div class="footer-left">
@@ -119,7 +121,6 @@
             </div>
         </div>
     </footer>
-    {% endblock %}
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="{% static 'event/script.js' %}"></script>
 </body>

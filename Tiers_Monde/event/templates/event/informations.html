@@ -1,14 +1,9 @@
-<!DOCTYPE html>
+
+{% extends 'event/index.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'event/style.css' %}">
-    <title>Informations</title>
-</head>
-<body>
+
+    {% block contenue %}
+    <img class='img_group_detail' src="{% static 'event/images/1.jpg' %}">
     <h1 class="title">Informations</h1>
     <h3 class="title2">Reports et annulations</h3>
     <div class="info_detail_p">
@@ -55,5 +50,4 @@
     </div>
 
     <a class="a_detail" href="{% url 'event:index' %}">Accueil</a>
-</body>
-</html>
+    {% endblock %}

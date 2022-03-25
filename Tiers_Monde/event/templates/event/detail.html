@@ -1,14 +1,7 @@
-<!DOCTYPE html>
+{% extends 'event/index.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'event/style.css' %}">
-    <title>Détail</title>
-</head>
-<body>
+
+    {% block contenue %}
     <h1 class="title">{{ event.name_event }}</h1>
     {% for group in event.group.all %}
         {% if group.pics_group %}
@@ -39,5 +32,4 @@
         <input class="bouton_detail1" type="submit" value="Réserver">
     </div>
     <a class="a_detail" href="{% url 'event:index' %}">Accueil</a>
-</body>
-</html>
+    {% endblock %}
