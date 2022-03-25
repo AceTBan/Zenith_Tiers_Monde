@@ -1,16 +1,15 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import User
 
 # Create your models here.
+
 class Users(models.Model):
-    name_user = models.CharField(max_length=50)
-    firstname_user = models.CharField(max_length=50)
-    mail_user = models.CharField(max_length=50)
-    pwd_user = models.CharField(max_length=50)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     avatar_user = models.ImageField(upload_to='avatar', blank=True)
 
     def __str__(self):
-        affiche = f"{self.name_user} {self.firstname_user}"
+        affiche = f"{self.user.last_name} {self.user.first_name}"
         return affiche
 
 
