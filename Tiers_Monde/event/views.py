@@ -55,3 +55,9 @@ def welcome(request):
         return render(request, 'event/welcome.html', context)
     else:
         return render(request, 'event/error_log.html')
+
+def acheter(request, event_id):
+    event = get_object_or_404(Events, pk=event_id)
+    event.av_ticket -= 1
+    event.save()
+    return render(request, 'event/acheter.html', {'event':event})
