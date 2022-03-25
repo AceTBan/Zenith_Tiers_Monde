@@ -77,3 +77,9 @@ class Halls(models.Model):
     def __str__(self):
         affiche =f" {self.name_hall} {self.size_hall} {self.hall_category}"
         return affiche
+
+class Contact(models.Model):
+    users = models.CharField(max_length=50)
+    name_contact = models.CharField(max_length=50)
+    mail_contact = models.CharField(max_length=50)
+    pub_date = models.DateField("Date de publication")

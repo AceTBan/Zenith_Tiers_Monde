@@ -55,3 +55,9 @@ def welcome(request):
         return render(request, 'event/welcome.html', context)
     else:
         return render(request, 'event/error_log.html')
+
+def contact(request):
+    return render(request, 'event/contact.html')
+
+def profil(request):
+    return render(request, 'event/resistered/html')
