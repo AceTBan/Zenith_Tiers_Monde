@@ -28,8 +28,8 @@
     <p class="p_detail">Catégorie : {{ group.type_group }}</p>
     {% endfor %}
     <div class="bouton_detail">
-        <input class="bouton_detail1" type="submit" value="Acheter">
-        <input class="bouton_detail1" type="submit" value="Réserver">
+        <a href="{% url 'event:acheter' event.id%}"><input class="bouton_detail1" type="button"  value="Acheter"></a>
+        
     </div>
     <a class="a_detail" href="{% url 'event:index' %}">Accueil</a>
     {% endblock %}
