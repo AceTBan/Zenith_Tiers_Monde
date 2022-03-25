@@ -13,5 +13,6 @@ urlpatterns = [
     path('login/', views.my_login, name='login'),
     path('logout/', views.my_logout, name='logout'),
     path('password/', views.new_password, name='password'),
+    path('contact/', views.contact, name='contact'),
     path('<int:event_id>/detail/acheter/', views.acheter, name='acheter'),
 ]
