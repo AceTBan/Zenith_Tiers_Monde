@@ -2,9 +2,9 @@
 {% load static %}
 
     {% block contenue %}
-    <h1>Bienvenue</h1>
-    <p>
+    <h1 class="title">Bienvenue</h1>
+    <p class="p_detail">
         Votre nom d'utilisateur est : {{user.username}}
     </p>
-    <a href="{% url 'event:login' %}">Login</a>
+    <a class="a_detail" href="{% url 'event:login' %}">Login</a>
     {% endblock %}

@@ -2,7 +2,7 @@
 {% load static %}
 {% block contenue %}
 
-<form id="register" method="post" action="{% url 'event:registered' %}">
+<!-- <form id="register" method="post" action="{% url 'event:registered' %}">
     {% csrf_token %}
     <h1 class="title2">Inscription</h1>
     <table>
@@ -35,6 +35,37 @@
                 <input type="submit" value="Enregistrer">
             </td>
         </tr>
-    </table>
-</form>
+    </table> -->
+<!-- </form> -->
+
+<div class="container_login">
+    <div class="card_login">
+        <div class="card-image">
+            <h1 class="card-heading title">Inscription</h1>
+        </div>
+        <a class="a_login" href="{% url 'event:login' %}">Déjà un compte ? Connectez-vous !</a>
+        <form class="card-form" id="register" method="post" action="{% url 'event:registered' %}">
+            {% csrf_token %}
+            <div class="input_login">
+                <input type="text" class="input-field" id="user_name" name="user_name"/>
+                <label class="input-label" for="user_name">Nom</label>
+            </div>
+            <div class="input_login">
+                <input type="text" class="input-field" id="user_firstname" name="user_firstname"/>
+                <label class="input-label" for="user_firstname">Prénom</label>
+            </div>
+            <div class="input_login">
+                <input type="password" class="input-field" id="user_email" name="user_email"/>
+                <label class="input-label" for="user_email">Email</label>
+            </div>
+            <div class="input_login">
+                <input type="password" class="input-field" id="user_pwd" name="user_pwd"/>
+                <label class="input-label" for="user_pwd">Mot de passe</label>
+            </div>
+            <div class="action_login">
+                <input class="bouton_login" type="submit" value="Enregistrer">
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

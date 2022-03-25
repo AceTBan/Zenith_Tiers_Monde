@@ -2,26 +2,54 @@
 {% load static %}
 
 {% block contenue %}
-<h1 class="title2">Identifiez-vous</h1>
-<form id="login" method="post" action="{% url 'event:welcome' %}">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td>
-                <label for="username">Login</label>
-                <input id="username" name="username">
-            </td>
-            <td>
-                <label for="password">Mot de passe</label>
-                <input id="password" name="password">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" value="Connexion">
+<!-- <h1 class="title2">Identifiez-vous</h1>
+<div class="form_login">
+    <form id="login" method="post" action="{% url 'event:welcome' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <input class="input_form" id="username" name="username">
+                    <label class="label_form" for="username">Login</label>
+                </td>
+                <td>
+                    <input class="input_form" id="password" name="password">
+                    <label class="label_form" for="password">Mot de passe</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="bouton_login" type="submit" value="Connexion">
+                    <input type="hidden" name="{{next}}">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div> -->
+
+<div class="container_login">
+    <div class="card_login">
+        <div class="card-image">
+            <h1 class="card-heading title">Identifiez-vous</h1>
+            <!-- <small>Let us create your account</small> -->
+        </div>
+        <a class="a_login" href="{% url 'event:register' %}">Pas de compte ? Inscrivez-vous !</a>
+        <form class="card-form" id="login" method="post" action="{% url 'event:welcome' %}">
+            {% csrf_token %}
+            <div class="input_login">
+                <input type="text" class="input-field" id="username" name="username" required />
+                <label class="input-label">Pseudo</label>
+            </div>
+            <div class="input_login">
+                <input type="password" class="input-field" id="password" name="password" required />
+                <label class="input-label">Mot de passe</label>
+            </div>
+            <div class="action_login">
+                <input class="bouton_login" type="submit" value="Connexion">
                 <input type="hidden" name="{{next}}">
-            </td>
-        </tr>
-    </table>
-</form>
+                <!-- <button class="action-button">Connexion</button> -->
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
